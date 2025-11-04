@@ -9,7 +9,6 @@ Mime::Type.register "text/plain", :text, [], %w(txt)
 Mime::Type.register "application/json", :json, %w(text/x-json application/jsonrequest)
 
 # Mime types supported by bolognese gem https://github.com/datacite/bolognese
-Mime::Type.register "application/vnd.crossref.unixref+xml", :crossref
 Mime::Type.register "application/vnd.crosscite.crosscite+json", :crosscite
 Mime::Type.register "application/vnd.datacite.datacite+xml", :datacite, %w(application/x-datacite+xml)
 Mime::Type.register "application/vnd.datacite.datacite+json", :datacite_json

@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   get '/application/vnd.jats+xml/:id', :to => 'index#show', constraints: { :id => /.+/ }, defaults: { format: :jats }
   get '/application/x-bibtex/:id', :to => 'index#show', constraints: { :id => /.+/ }, defaults: { format: :bibtex }
   get '/application/x-research-info-systems/:id', :to => 'index#show', constraints: { :id => /.+/ }, defaults: { format: :ris }
-  get '/application/vnd.crossref.unixref+xml/:id', :to => 'index#show', constraints: { :id => /.+/ }, defaults: { format: :crossref }
   get '/application/rdf+xml/:id', :to => 'index#show', constraints: { :id => /.+/ }, defaults: { format: :rdf_xml }
   get '/application/x-turtle/:id', :to => 'index#show', constraints: { :id => /.+/ }, defaults: { format: :turtle }
   get '/text/x-bibliography/:id', :to => 'index#show', constraints: { :id => /.+/ }, defaults: { format: :citation }

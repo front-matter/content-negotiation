@@ -5,7 +5,6 @@ describe Help do
     it 'should include all mime types' do
       expect(subject.available_content_types).to eq({
         "application/vnd.crosscite.crosscite+json" => :crosscite,
-        "application/vnd.crossref.unixref+xml"=>:crossref,
         "application/vnd.datacite.datacite+xml"=>:datacite,
         "application/vnd.jats+xml" => :jats,
         "application/x-datacite+xml"=>:datacite,

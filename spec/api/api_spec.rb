@@ -177,6 +177,20 @@ describe 'content negotiation', type: :api, vcr: true do
     end
   end
 
+  context "application/vnd.crossref.unixref+xml" do
+    it "header" do
+      get "/#{doi}", nil, { "HTTP_ACCEPT" => "application/vnd.crossref.unixref+xml" }
+
+      expect(last_response.status).to eq(303)
+    end
+
+    it "link" do
+      get "/application/vnd.crossref.unixref+xml/#{doi}"
+
+      expect(last_response.status).to eq(303)
+    end
+  end
+  
   # context "application/rdf+xml" do
   #   it "header" do
   #     get "/#{doi}", nil, { "HTTP_ACCEPT" => "application/rdf+xml" }
