@@ -177,6 +177,29 @@ describe 'content negotiation', type: :api, vcr: true do
     end
   end
 
+  context "application/vnd.crossref.unixref+xml" do
+    it "header" do
+      get "/#{doi}", nil, { "HTTP_ACCEPT" => "application/vnd.crossref.unixref+xml" }
+
+      expect(last_response.status).to eq(303)
+    end
+
+    it "header with fallback" do
+      get "/#{doi}", nil, { "HTTP_ACCEPT" => "application/vnd.crossref.unixref+xml;q=0.9,application/vnd.datacite.datacite+xml;q=0.8, application/x-bibtex;q=0.7" }
+      
+      expect(last_response.status).to eq(200)
+      response = Maremma.from_xml(last_response.body).to_h.fetch("resource", {})
+      expect(response.dig("publisher")).to eq("DataCite")
+      expect(response.dig("titles", "title")).to eq("Announcing schema 4.2")
+    end
+
+    it "link" do
+      get "/application/vnd.crossref.unixref+xml/#{doi}"
+
+      expect(last_response.status).to eq(404)
+    end
+  end
+  
   # context "application/rdf+xml" do
   #   it "header" do
   #     get "/#{doi}", nil, { "HTTP_ACCEPT" => "application/rdf+xml" }
