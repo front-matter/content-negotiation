@@ -11,8 +11,8 @@ RUN usermod -a -G docker_env app
 # Use baseimage-docker's init process.
 CMD ["/sbin/my_init"]
 
-# Use Ruby 3.1.6
-RUN bash -lc 'rvm --default use ruby-3.1.6'
+# Use Ruby 3.1.4
+RUN bash -lc 'rvm install ruby-3.1.4 && rvm --default use ruby-3.1.4'
 
 # Update installed APT packages
 RUN apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold" && \
