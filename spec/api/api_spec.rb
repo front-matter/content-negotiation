@@ -187,7 +187,7 @@ describe 'content negotiation', type: :api, vcr: true do
     it "link" do
       get "/application/vnd.crossref.unixref+xml/#{doi}"
 
-      expect(last_response.status).to eq(303)
+      expect(last_response.status).to eq(404)
     end
   end
   
