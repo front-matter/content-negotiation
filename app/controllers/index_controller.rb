@@ -46,7 +46,7 @@ class IndexController < ApplicationController
                style: params[:style] || headers[:style] || "apa", locale: params[:locale] || headers[:locale] || "en-US"
       end
       format.any(:bibtex, :citeproc, :codemeta, :crosscite, :datacite,
-                 :datacite_json, :crossref, :jats, :ris, :schema_org, :rdf_xml, :turtle) do
+                 :datacite_json, :jats, :ris, :schema_org, :rdf_xml, :turtle) do
         render request.format.to_sym => @metadata
       end
     end

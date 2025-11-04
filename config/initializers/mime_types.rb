@@ -40,7 +40,7 @@ ActionController::Renderers.add :citation do |obj, options|
   end
 end
 
-%w(datacite_json crossref schema_org crosscite citeproc codemeta jats bibtex ris rdf_xml turtle).each do |f|
+%w(datacite_json schema_org crosscite citeproc codemeta jats bibtex ris rdf_xml turtle).each do |f|
   ActionController::Renderers.add f.to_sym do |obj, options|
     obj.send(f)
   end
