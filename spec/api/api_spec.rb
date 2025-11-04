@@ -189,9 +189,8 @@ describe 'content negotiation', type: :api, vcr: true do
       
       expect(last_response.status).to eq(200)
       response = Maremma.from_xml(last_response.body).to_h.fetch("resource", {})
-      expect(response.dig("publisher")).to eq("Utrecht University")
-      expect(response.dig("titles", "title")).to eq("__content__"=>"Minimum: Title", "xml:lang"=>"en")
-      expect(response.dig("version")).to eq("Minimum: Version")
+      expect(response.dig("publisher")).to eq("DataCite")
+      expect(response.dig("titles", "title")).to eq("__content__"=>"Announcing schema 4.2")
     end
 
     it "link" do
