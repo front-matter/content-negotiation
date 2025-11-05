@@ -15,12 +15,13 @@ jobs:
       MEMCACHE_SERVERS: "localhost:11211"
     steps:
       - uses: actions/checkout@v3
-      - name: Set up Ruby 3.1.4
+      - name: Set up Ruby 3.1.6
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.1.4
+          ruby-version: 3.1.6
+          rubygems: 3.6.0
         env:
-          BUNDLER_VERSION: 2.4.22
+          BUNDLER_VERSION: 2.6.9
       - uses: actions/cache@v3
         with:
           path: vendor/bundle
