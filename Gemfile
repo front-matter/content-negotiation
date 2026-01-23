@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "~> 7.1", ">= 7.1.3"
+gem "rails", "~> 7.2", ">= 7.2.3"
 gem "dotenv"
 gem "oj", ">= 2.8.3"
 gem "oj_mimic_json", "~> 1.0", ">= 1.0.1"

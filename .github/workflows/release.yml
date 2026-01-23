@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       memcached:
-        image: memcached:1.4.31
+        image: memcached:1.6.32
         ports:
           - 11211/udp
     env:
@@ -16,10 +16,10 @@ jobs:
       SECRET_KEY_BASE: ${{ secrets.SECRET_KEY_BASE }}
     steps:
       - uses: actions/checkout@v3
-      - name: Set up Ruby 3.1.6
+      - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.1.6
+          ruby-version: 3.2.9
           rubygems: 3.6.0
         env:
           BUNDLER_VERSION: 2.6.9
@@ -34,7 +34,7 @@ jobs:
           MYSQL_PORT: ${{ job.services.mysql.ports[3306] }}
         run: |
           cp .env.build .env
-          gem install bundler -v 2.4.22
+          gem install bundler -v 2.6.9
           bundle config path vendor/bundle
           bundle install --jobs 4 --retry 3
       - name: Lint and Test

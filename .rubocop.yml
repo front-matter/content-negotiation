@@ -6,7 +6,7 @@ AllCops:
     - db/schema.rb
     - vendor/bundle/**/*
 
-require:
+plugins:
   - rubocop-rails
   - rubocop-performance
 
@@ -101,7 +101,7 @@ Metrics/AbcSize:
 Metrics/BlockLength:
   CountComments: true  # count full line comments?
   Max: 25
-  ExcludedMethods: []
+  AllowedMethods: []
   Exclude:
     - "spec/**/*"
 
@@ -213,7 +213,7 @@ Style/LineEndConcatenation:
                  line end.
   Enabled: false
 
-Metrics/LineLength:
+Layout/LineLength:
   Description: 'Limit lines to 80 characters.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#80-character-limits'
   Max: 80
@@ -294,7 +294,7 @@ Style/PerlBackrefs:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-perl-regexp-last-matchers'
   Enabled: false
 
-Naming/PredicateName:
+Naming/PredicatePrefix:
   Description: 'Check the names of predicate methods.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#bool-methods-qmark'
   ForbiddenPrefixes:
