@@ -5,7 +5,7 @@ require 'bundler/setup'
 Bundler.setup
 
 require 'simplecov'
-SimpleCov.start
+SimpleCov.start unless SimpleCov.running
 
 require File.expand_path("../../config/environment", __FILE__)
 require "rspec/rails"
