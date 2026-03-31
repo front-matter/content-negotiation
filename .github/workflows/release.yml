@@ -19,7 +19,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.2.10
+          ruby-version: 4.0.1
           rubygems: 3.6.0
         env:
           BUNDLER_VERSION: 2.6.9
