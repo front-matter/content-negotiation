@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "~> 8.1", ">= 8.1.0"
+gem "rails", "~> 8.1", ">= 8.1.2.1"
 gem "dotenv", "~> 3.2"
 gem "oj", ">= 3.16", ">= 3.16.16"
 gem "oj_mimic_json", "~> 1.0", ">= 1.0.1"
@@ -17,8 +17,6 @@ gem "gender_detector", "~> 2.1"
 gem "rack-cors", "~> 3.0"
 gem "sprockets", "~> 4.2", ">= 4.2.2"
 
-# Security: Force updated version to fix CVE-2024-49761 and related DoS vulnerabilities
-gem "rexml", "~> 3.4", ">= 3.4.4"
 
 group :development, :test do
   gem "listen", "~> 3.10"
